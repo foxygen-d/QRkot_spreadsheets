@@ -1,4 +1,3 @@
-from datetime import datetime
 from typing import Dict, List, Optional
 
 from sqlalchemy import select
@@ -48,5 +47,6 @@ class CRUDCharityProject(CRUDBase):
                 'description': proj.description,
             })
         return sorted(closed_projects, key=lambda i: (i['project_lifetime']))
+
 
 charity_project_crud = CRUDCharityProject(CharityProject)
